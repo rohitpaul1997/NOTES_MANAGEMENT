@@ -28,8 +28,9 @@ class Student(models.Model):
     Email = models.CharField(max_length=50)
     Phone = models.IntegerField()
     Name = models.CharField(max_length=100)
+    College = models.CharField(max_length=100)
     Stream_id = models.ForeignKey('Stream', on_delete=models.CASCADE)
-    Year = models.IntegerField()
+    Year_OF_PAASING = models.IntegerField()
     Password = models.CharField(max_length=100)
 
 

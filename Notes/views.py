@@ -20,11 +20,12 @@ def signup(request):
         Password = request.POST['Password']
         RPassword = request.POST["RPassword"]
         encryptedpassword=make_password(Password)
-        checkpassword=check_password(RPassword, encryptedpassword) 
+        checkpassword=check_password(RPassword, encryptedpassword)
+        College = request.POST['College'] 
         Year = request.POST['Year']
         stream = request.POST['Stream']
         if checkpassword:
-            obj = Student(Roll,Email,Phone,Name,stream,Year,encryptedpassword)
+            obj = Student(Roll,Email,Phone,Name,College,stream,Year,encryptedpassword)
             # subject = 'welcome To My App'
             # message = "Hi"
             # email_from = settings.EMAIL_HOST_USER

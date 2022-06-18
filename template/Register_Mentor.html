@@ -10,16 +10,13 @@
 </head>
 
 <body>
-    <h2>Student Registration</h2>
+    <h2>Mentor Registration</h2>
     <form action="#" method="post">
         {% csrf_token %}
         {% load static %}
-        <input type="text" name="Roll" placeholder="Roll" required /><br>
         <input type="text" name="Name" placeholder="Name" required /><br>
         <input type="email" name="Email" placeholder="Email" required /><br>
         <input type="text" name="Phone" placeholder="Phone" required /><br>
-        <input type="text" name="College" placeholder="College" required /><br>
-        <input type="text" name="Year" placeholder="Year_of_passing" required /><br>
         <input type="password" name="Password" placeholder="Password" required /><br>
         <input type="password" name="RPassword" placeholder="Re-type Password" required /><br>
         <input type="radio" name="radiogroup1" id="rd1" />
