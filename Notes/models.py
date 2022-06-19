@@ -1,4 +1,5 @@
 from argparse import _MutuallyExclusiveGroup
+from tkinter import CASCADE
 from django.db import models
 
 # Create your models here.
@@ -22,22 +23,24 @@ class Topic(models.Model):
     Sub_id = models.ForeignKey('Subject', on_delete=models.CASCADE)
     Topic_name = models.CharField(max_length=100)
 
+class College(models.Model):
+    College_id = models.CharField(primary_key=True, max_length=10)
+    College_name = models.CharField(max_length=200)    
 
 class Student(models.Model):
-    Roll = models.IntegerField(primary_key=True)
-    Email = models.CharField(max_length=50)
+    Email = models.CharField(primary_key=True,max_length=50)
     Phone = models.IntegerField()
     Name = models.CharField(max_length=100)
-    College = models.CharField(max_length=100)
+    College_id = models.ForeignKey('College',on_delete=models.CASCADE)
     Stream_id = models.ForeignKey('Stream', on_delete=models.CASCADE)
     Year_OF_PAASING = models.IntegerField()
     Password = models.CharField(max_length=100)
 
 
 class Teacher(models.Model):
-    Emp_id = models.CharField(primary_key=True, max_length=30)
     Email = models.CharField(max_length=50)
     Phone = models.IntegerField()
     Name = models.CharField(max_length=100)
+    College_id = models.ForeignKey('College',on_delete=models.CASCADE)
     Stream_id = models.ForeignKey('Stream', on_delete=models.CASCADE)
     Password = models.CharField(max_length=100)

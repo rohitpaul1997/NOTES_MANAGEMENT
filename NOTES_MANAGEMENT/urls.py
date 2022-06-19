@@ -20,5 +20,6 @@ from Notes import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home),
-    path('register/',views.signup),
+    path('register_student/',views.signup_Student),
+    path('register_teacher/',views.signup_Teacher),
 ]
