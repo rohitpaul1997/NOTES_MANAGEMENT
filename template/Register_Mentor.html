@@ -17,13 +17,16 @@
         <input type="text" name="Name" placeholder="Name" required /><br>
         <input type="email" name="Email" placeholder="Email" required /><br>
         <input type="text" name="Phone" placeholder="Phone" required /><br>
-        <input type="text" name="College" placeholder="College" required /><br>
+        <label>College</label>
+        <select name="college">
+            {%for i in college%}
+            <option value="{{i.College_id}}">{{i.College_name}}</option>
+            {%endfor%}
+        </select><br>
         <input type="password" name="Password" placeholder="Password" required /><br>
         <input type="password" name="RPassword" placeholder="Re-type Password" required /><br>
-        <input type="radio" name="radiogroup1" id="rd1" />
         <label>Stream</label>
         <select name="Stream">
-            
             {%for i in record%}
             <option value="{{i.Stream_id}}">{{i.Stream_name}}</option>
             {%endfor%}

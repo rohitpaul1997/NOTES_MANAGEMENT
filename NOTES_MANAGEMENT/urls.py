@@ -20,6 +20,11 @@ from Notes import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home),
-    path('register_student/',views.signup_Student),
-    path('register_teacher/',views.signup_Teacher),
+    path('register_student/',views.signup_Student,name='student_register'),
+    path('register_teacher/',views.signup_Teacher,name='mentor_register'),
+    path('addCollege/',views.AddCollege,name='addcollege'),
+    path('login/',views.login,name='login'),
+    path('dashboard/',views.dashboard,name='dashboard'),
+    path('logout/',views.logout,name='logout'),
+    path('addnotes/',views.addnotes,name='addnotes'),
 ]

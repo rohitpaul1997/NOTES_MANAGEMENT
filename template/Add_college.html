@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add College</title>
+</head>
+<body>
+    <h2>Add Your College</h2>
+    <form action="#" method="post">
+        {% csrf_token %}
+        {% load static %}
+        <input type="text" name="College" placeholder="Enter your name of the College" required /><br>
+  
+        <input class="button" type="submit" value="Submit" />
+    </form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+    {% for message in messages %}
+    <div class="container-fluid p-0">
+        <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            {{ message }}
+        </div>
+    </div>
+    {% endfor %}
+    <h2>Login</h2>
+    <form action="#" method="post">
+        {% csrf_token %}
+        {% load static %}
+        <input type="email" name="Email" placeholder="Email" required /><br>
+        <input type="password" name="lpassword" placeholder="password" required /><br>
+        <label>Login as: </label>
+        <select name="As">
+            <option value="Student">Student</option>
+            <option value="Mentor">Mentor</option>
+        </select><br>
+        <input class="button" type="submit" value="Login" />
+    </form>
+
+    {%for i in abc%}
+    {{i.Password}}
+    {%endfor%}
+</body>
+
+</html>
